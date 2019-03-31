@@ -1,0 +1,78 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    Image1: TImage;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+var
+  CX, CY: word;
+  R: byte = 100;
+  H: byte = 5;
+
+procedure DrawClock(x, y: word);
+var
+  XR, YR, EXR, EYR: word;
+begin
+  XR := X-R;
+  YR := Y-R;
+  EXR := x+R;
+  EYR := y+R;
+  with Form1.Image1.Canvas do
+  begin
+    Ellipse(XR, YR, EXR, EYR);
+    Pixels[x,y] := clBlack;
+ {  Нужно для визулизации. включить при отладке
+    MoveTo(x,y);
+    LineTo((XR+EXR) div 2 , YR);
+
+    MoveTo(x,y);
+    LineTo((XR+EXR) div 2 , EYR);
+
+    MoveTo(x,y);
+    LineTo(XR, (YR + EYR) div 2);
+
+    MoveTo(x,y);
+    LineTo(EXR, (YR + EYR) div 2);   // }
+
+    Font.Size := 14;
+
+    TextOut( x - (TextWidth('12') div 2)+1, YR+h, '12');
+    TextOut(EXR-3*h, y - (TextHeight('3') div 2), '3');
+    TextOut( x - (TextWidth('6') div 2), EYR-H*6+2, '6');
+    TextOut( XR+h, y - (TextHeight('9') div 2), '9');
+
+    font.Size := 12;
+
+    TextOut(((EXR+x) div 2) - (TextWidth('1') div 2) , ((y + YR) div 3) - (TextHeight('1') div 2)+2, '1');
+    TextOut(((EXR+x) div 2) + (TextWidth('2') div 2) , ((y + YR) div 2) + (TextHeight('2') div 2)+2, '2');
+
+  end;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  CX := Form1.Image1.Width div 2;
+  CY := form1.Image1.Height div 2;
+  DrawClock(CX, CY);
+end;
+
+end.

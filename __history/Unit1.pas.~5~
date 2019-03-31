@@ -1,0 +1,53 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    Image1: TImage;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+var
+  CX, CY: word;
+  R: byte = 75;
+  H: byte = 5;
+
+procedure DrawClock(x, y: word);
+var
+  XR, YR, EXR, EYR: word;
+begin
+  XR := X-R;
+  YR := Y-R;
+  EXR := x+R;
+  EYR := y+R;
+  with Form1.Image1.Canvas do
+  begin
+    Ellipse(XR, YR, EXR, EYR);
+    //TextOut(
+  end;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  CX := Form1.Image1.Width div 2;
+  CY := form1.Image1.Height div 2;
+  DrawClock(CX, CY);
+end;
+
+end.

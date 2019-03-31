@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.449,C:\Users\User\Documents\Embarcadero\Studio\Projects\Unit1.pas=E:\projects\Delphi\Часы\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.505,=C:\Users\User\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.988,C:\Users\User\Documents\Embarcadero\Studio\Projects\Project1.dproj=E:\projects\Delphi\Часы\Clock.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.449,C:\Users\User\Documents\Embarcadero\Studio\Projects\Unit1.dfm=E:\projects\Delphi\Часы\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.747,=C:\Users\User\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017.11.26 21:17:24.863,=E:\projects\Delphi\Часы\Unit2.pas</Transaction>
+  </Transactions>
+</BorlandProject>
